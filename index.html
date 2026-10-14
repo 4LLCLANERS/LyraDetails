@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Lyra Details ✨ | Experiencia Digital</title>
+  
+  <!-- Google Fonts: Playfair Display (Elegante) & Montserrat (Moderna) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+  
+</head>
+<body>
+
+  <!-- Fondo de luces cálidas LED -->
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- 1. OVERLAY DE UNBOXING DIGITAL -->
+  <div id="unboxing-overlay">
+    <span class="brand-badge">Lyra Details • Phygital Experience</span>
+    <div class="gift-seal">🎁</div>
+    <h1 class="unboxing-title">Alexito preparó algo único para ti</h1>
+    <p class="unboxing-subtitle">
+      Sube el volumen de tu celular. Este detalle físico guarda un recuerdo vivo hecho a tu medida.
+    </p>
+    <button class="btn-open" id="btn-start">✨ Tocar para descubrir</button>
+  </div>
+
+  <!-- CONTENEDOR PRINCIPAL -->
+  <main class="app-container">
+    <div class="content-wrapper">
+      
+      <!-- Cabecera -->
+      <header class="header">
+        <div class="header-logo">LYRA DETAILS</div>
+        <div class="header-tag">Detalles que cuentan historias ✨</div>
+      </header>
+
+      <!-- 2. REPRODUCTOR DE VOZ / CANCIÓN PERSONALIZADA -->
+      <!-- NOTA PARA ALEXSANDER Y EVER: Cambien el 'src' por un audio real de Celeste (ej: "voz-celeste.mp3") -->
+      <audio id="bg-audio" loop preload="auto" src="images/AUDIO1.mp4"></audio>
+
+      <section class="glass-card audio-card">
+        <button class="play-btn" id="play-pause-btn" aria-label="Reproducir">⏸</button>
+        <div class="audio-info">
+          <span class="audio-badge">🎙️ Audio Exclusivo • Voz Acústica</span>
+          <div class="audio-title">Dedicada para ti (Cover por Celeste)</div>
+          <div class="waveform" id="waveform">
+            <div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div>
+            <div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. GALERÍA POLAROID DESLIZABLE -->
+      <h2 class="section-title">📸 Nuestros Momentos</h2>
+      <div class="carousel">
+        <!-- NOTA: Aquí pueden reemplazar los links por fotos reales o fotos de los ramos de Lyra Details -->
+        <div class="polaroid">
+          <img src="images/imagen1.jpg" alt="Momento 1" />
+          <div class="polaroid-caption">Donde todo empezó ✨</div>
+        </div>
+        <div class="polaroid">
+          <img src="images/imagen2.jpeg" alt="Momento 2" />
+          <div class="polaroid-caption">Cómplices siempre ❤️</div>
+        </div>
+        <div class="polaroid">
+          <img src="images/imagen3.jpeg" alt="Momento 3" />
+          <div class="polaroid-caption">Por mil aventuras más 🥂</div>
+        </div>
+      </div>
+
+      <!-- 4. CARTA INTERACTIVA -->
+      <section class="glass-card letter-card">
+        <p class="letter-quote">
+          "Quería darte un detalle que no se marchitara nunca, igual que lo que siento cuando estamos juntos. Cada flor y cada luz de esta caja guarda un pedacito de nuestra historia."
+        </p>
+        <div class="letter-sign">— Con todo mi cariño ❤️</div>
+      </section>
+
+      <!-- 5. MODO CALENDARIO DE ADVIENTO PHYGITAL -->
+      <section class="glass-card">
+        <h2 class="section-title">🎄 Calendario Phygital</h2>
+        <p class="advent-subtitle">
+          Cada día desbloquea una casilla digital aquí antes de abrir tu caja física de <strong>Lyra Details</strong>.
+        </p>
+
+        <div class="advent-grid">
+          <!-- Día 1: Desbloqueado -->
+          <div class="advent-box unlocked" id="box-day-1">
+            <span class="advent-number">1</span>
+            <span class="advent-status">🔓 Abrir hoy</span>
+          </div>
+
+          <!-- Día 2: Bloqueado -->
+          <div class="advent-box locked" data-day="2">
+            <span class="advent-number">2</span>
+            <span class="advent-status">🔒 Mañana</span>
+          </div>
+
+          <!-- Día 3: Bloqueado -->
+          <div class="advent-box locked" data-day="3">
+            <span class="advent-number">3</span>
+            <span class="advent-status">🔒 03 Dic</span>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        Creado con ❤️ por <strong>@lyra.details</strong> • Lima, Perú
+      </footer>
+
+    </div>
+  </main>
+
+  <!-- MODAL DEL DÍA 1 DESBLOQUEADO -->
+  <div class="modal-backdrop" id="modal-day-1">
+    <div class="modal-content">
+      <div style="font-size: 2.5rem;">🎉</div>
+      <h3 class="modal-title">¡Sorpresa del Día 1!</h3>
+      <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5;">
+        Ya puedes abrir la <strong>Casilla Física #1</strong> de tu caja Lyra Details. Además, desbloqueaste este vale digital:
+      </p>
+      <div class="voucher-box">
+        🎟️ <strong>VALE POR:</strong><br/>
+        Una salida a cenar tu plato favorito esta semana (Todo pagado ❤️)
+      </div>
+      <button class="btn-open" id="close-modal" style="padding: 12px 28px; font-size: 0.8rem;">
+        ¡Me encanta! ✨
+      </button>
+    </div>
+  </div>
+
+  <!-- TOAST PARA DÍAS BLOQUEADOS -->
+  <div id="toast">⏳ ¡Paciencia! Se desbloquea mañana a las 00:00 hrs</div>
+
+  <script>
+        // 1. LÓGICA DE APERTURA Y AUDIO
+        const startBtn = document.getElementById('btn-start');
+        const overlay = document.getElementById('unboxing-overlay');
+        const audio = document.getElementById('bg-audio');
+        const playPauseBtn = document.getElementById('play-pause-btn');
+        const waveform = document.getElementById('waveform');
+
+        let isPlaying = false;
+
+        startBtn.addEventListener('click', () => {
+          overlay.classList.add('hidden');
+          audio.play().then(() => {
+            isPlaying = true;
+            waveform.classList.add('playing');
+            playPauseBtn.textContent = '⏸';
+          }).catch(() => {
+            // Si no hay internet para cargar el MP3 de prueba, igual anima las barras para el video demo
+            isPlaying = true;
+            waveform.classList.add('playing');
+          });
+        });
+
+        playPauseBtn.addEventListener('click', () => {
+          if (isPlaying) {
+            audio.pause();
+            waveform.classList.remove('playing');
+            playPauseBtn.textContent = '▶';
+          } else {
+            audio.play().catch(() => {});
+            waveform.classList.add('playing');
+            playPauseBtn.textContent = '⏸';
+          }
+          isPlaying = !isPlaying;
+        });
+
+        // 2. LÓGICA DEL CALENDARIO DE ADVIENTO
+        const boxDay1 = document.getElementById('box-day-1');
+        const modalDay1 = document.getElementById('modal-day-1');
+        const closeModal = document.getElementById('close-modal');
+        const lockedBoxes = document.querySelectorAll('.advent-box.locked');
+        const toast = document.getElementById('toast');
+        let toastTimeout;
+
+        boxDay1.addEventListener('click', () => {
+          modalDay1.classList.add('active');
+        });
+
+        closeModal.addEventListener('click', () => {
+          modalDay1.classList.remove('active');
+        });
+
+        lockedBoxes.forEach(box => {
+          box.addEventListener('click', () => {
+            box.classList.remove('shake');
+            void box.offsetWidth; // Reinicia animación
+            box.classList.add('shake');
+
+            toast.classList.add('show');
+            clearTimeout(toastTimeout);
+            toastTimeout = setTimeout(() => {
+              toast.classList.remove('show');
+            }, 2600);
+          });
+        });
+
+        // 3. PARTÍCULAS DORADAS FLOTANTES (EFECTO LUCES CÁLIDAS)
+        const canvas = document.getElementById('particles-canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+
+        function resizeCanvas() {
+          canvas.width = Math.min(window.innerWidth, 430);
+          canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        for (let i = 0; i < 32; i++) {
+          particles.push({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            r: Math.random() * 2.2 + 0.6,
+            vy: -(Math.random() * 0.4 + 0.15),
+            alpha: Math.random() * 0.65 + 0.2
+          });
+        }
+
+        function animateParticles() {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          particles.forEach(p => {
+            p.y += p.vy;
+            if (p.y < 0) p.y = canvas.height;
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(212, 175, 55, ${p.alpha})`;
+            ctx.shadowBlur = 8;
+            ctx.shadowColor = '#d4af37';
+            ctx.fill();
+          });
+          requestAnimationFrame(animateParticles);
+        }
+        animateParticles();
+    </script>
+</body>
+</html>
