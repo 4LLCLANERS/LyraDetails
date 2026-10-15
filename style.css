@@ -1,0 +1,1457 @@
+/* =========================================================================
+   1. CATÁLOGO DE 16 TEMAS AUTOMÁTICOS (OSCUROS Y CLAROS)
+   Se activan cambiando PEDIDO_CONFIG.tema en el index.html
+   ========================================================================= */
+
+/* 1. RUBÍ (Vino Tinto y Oro - Por defecto) */
+:root, body[data-theme="rubi"] {
+  --body-outer: #050203;
+  --bg-gradient: radial-gradient(circle at 50% 15%, #31121f 0%, #14070d 65%, #080305 100%);
+  --envelope-bg: rgba(20, 8, 14, 0.85);
+  --glass-bg: rgba(45, 18, 29, 0.58);
+  --glass-border: rgba(230, 190, 174, 0.24);
+  --counter-box-bg: rgba(0, 0, 0, 0.28);
+  --gold: #d4af37;
+  --gold-light: #f5e6b8;
+  --rose-gold: #e6beae;
+  --seal-main: #8f1d2c;
+  --seal-dark: #4f0b14;
+  --seal-text: #f5e6b8;
+  --text-main: #fdfbf7;
+  --text-muted: #cbb8c0;
+  --play-btn-text: #12080c;
+  --particle-rgb: 212, 175, 55;
+}
+
+/* 2. NEGRO (Negro Ónix y Oro Imperial) */
+body[data-theme="negro"] {
+  --body-outer: #000000;
+  --bg-gradient: radial-gradient(circle at 50% 15%, #1c1a17 0%, #0a0908 65%, #020202 100%);
+  --envelope-bg: rgba(12, 12, 12, 0.9);
+  --glass-bg: rgba(28, 26, 24, 0.65);
+  --glass-border: rgba(212, 175, 55, 0.28);
+  --counter-box-bg: rgba(0, 0, 0, 0.45);
+  --gold: #d4af37;
+  --gold-light: #fff1be;
+  --rose-gold: #d8c39e;
+  --seal-main: #222222;
+  --seal-dark: #090909;
+  --seal-text: #d4af37;
+  --text-main: #ffffff;
+  --text-muted: #a8a29e;
+  --play-btn-text: #090909;
+  --particle-rgb: 212, 175, 55;
+}
+
+/* 3. PLATA (Negro Carbón y Plata Cromada) */
+body[data-theme="plata"] {
+  --body-outer: #050608;
+  --bg-gradient: radial-gradient(circle at 50% 15%, #23272e 0%, #101216 65%, #07080a 100%);
+  --envelope-bg: rgba(16, 18, 22, 0.88);
+  --glass-bg: rgba(38, 43, 52, 0.55);
+  --glass-border: rgba(210, 220, 235, 0.25);
+  --counter-box-bg: rgba(0, 0, 0, 0.35);
+  --gold: #cbd5e1;
+  --gold-light: #f8fafc;
+  --rose-gold: #94a3b8;
+  --seal-main: #475569;
+  --seal-dark: #1e293b;
+  --seal-text: #f8fafc;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --play-btn-text: #0f172a;
+  --particle-rgb: 203, 213, 225;
+}
+
+/* 4. BLANCO (Tema Claro: Blanco Marfil, Perla y Oro Champagne) */
+body[data-theme="blanco"] {
+  --body-outer: #eae6df;
+  --bg-gradient: radial-gradient(circle at 50% 15%, #ffffff 0%, #f7f4ef 65%, #ebe5dc 100%);
+  --envelope-bg: rgba(255, 255, 255, 0.92);
+  --glass-bg: rgba(255, 255, 255, 0.75);
+  --glass-border: rgba(184, 146, 74, 0.32);
+  --counter-box-bg: rgba(184, 146, 74, 0.08);
+  --gold: #b08d44;
+  --gold-light: #7c5e20;
+  --rose-gold: #8c7355;
+  --seal-main: #c5a059;
+  --seal-dark: #8c6928;
+  --seal-text: #ffffff;
+  --text-main: #2c2520;
+  --text-muted: #6e6259;
+  --play-btn-text: #ffffff;
+  --particle-rgb: 184, 146, 74;
+}
+
+/* 5. ROSADO (Rosa Intenso Romántico y Rose Gold) */
+body[data-theme="rosado"] {
+  --body-outer: #0d0408;
+  --bg-gradient: radial-gradient(circle at 50% 15%, #4a1531 0%, #240917 65%, #11040b 100%);
+  --envelope-bg: rgba(36, 9, 23, 0.86);
+  --glass-bg: rgba(74, 21, 49, 0.55);
+  --glass-border: rgba(255, 166, 201, 0.3);
+  --counter-box-bg: rgba(0, 0, 0, 0.28);
+  --gold: #ff85b3;
+  --gold-light: #ffd1e3;
+  --rose-gold: #ffb3cf;
+  --seal-main: #c92a68;
+  --seal-dark: #78123a;
+  --seal-text: #fff0f6;
+  --text-main: #fff5f8;
+  --text-muted: #e5b8c9;
+  --play-btn-text: #240917;
+  --particle-rgb: 255, 133, 179;
+}
+
+/* 6. CUARZO (Tema Claro: Rosa Pastel Coquette y Dorado Suave) */
+body[data-theme="cuarzo"] {
+  --body-outer: #f0dfe6;
+  --bg-gradient: radial-gradient(circle at 50% 15%, #fff5f8 0%, #fce8ef 65%, #f3d5e0 100%);
+  --envelope-bg: rgba(255, 250, 252, 0.92);
+  --glass-bg: rgba(255, 255, 255, 0.72);
+  --glass-border: rgba(212, 122, 156, 0.32);
+  --counter-box-bg: rgba(212, 122, 156, 0.1);
+  --gold: #c9658c;
+  --gold-light: #8f395b;
+  --rose-gold: #a85c79;
+  --seal-main: #d9759b;
+  --seal-dark: #9e4265;
+  --seal-text: #ffffff;
+  --text-main: #3b1c28;
+  --text-muted: #7a4e5f;
+  --play-btn-text: #ffffff;
+  --particle-rgb: 201, 101, 140;
+}
+
+/* 7. VERDE (Verde Esmeralda Imperial y Oro) */
+body[data-theme="verde"] {
+  --body-outer: #030a07;
+  --bg-gradient: radial-gradient(circle at 50% 15%, #0f3828 0%, #071c14 65%, #030d09 100%);
+  --envelope-bg: rgba(7, 26, 18, 0.88);
+  --glass-bg: rgba(16, 54, 39, 0.58);
+  --glass-border: rgba(212, 175, 55, 0.28);
+  --counter-box-bg: rgba(0, 0, 0, 0.3);
+  --gold: #d4af37;
+  --gold-light: #f7e9b7;
+  --rose-gold: #a7d7c5;
+  --seal-main: #146343;
+  --seal-dark: #083321;
+  --seal-text: #f7e9b7;
+  --text-main: #f4fbf8;
+  --text-muted: #a3c9ba;
+  --play-btn-text: #071c14;
+  --particle-rgb: 212, 175, 55;
+}
+
+/* 8. SALVIA (Tema Claro: Verde Botánico Pastel y Marfil) */
+body[data-theme="salvia"] {
+  --body-outer: #dde5df;
+  --bg-gradient: radial-gradient(circle at 50% 15%, #f7fbf8 0%, #eaf2ec 65%, #d8e4db 100%);
+  --envelope-bg: rgba(252, 255, 253, 0.92);
+  --glass-bg: rgba(255, 255, 255, 0.74);
+  --glass-border: rgba(92, 133, 106, 0.3);
+  --counter-box-bg: rgba(92, 133, 106, 0.1);
+  --gold: #4f7a5e;
+  --gold-light: #2c4f38;
+  --rose-gold: #688c75;
+  --seal-main: #5c876b;
+  --seal-dark: #375943;
+  --seal-text: #ffffff;
+  --text-main: #1f3326;
+  --text-muted: #56705f;
+  --play-btn-text: #ffffff;
+  --particle-rgb: 79, 122, 94;
+}
+
+/* 9. MEDIANOCHE (Azul Noche Profundo y Oro Estelar) */
+body[data-theme="medianoche"] {
+  --body-outer: #04070d;
+  --bg-gradient: radial-gradient(circle at 50% 15%, #132542 0%, #091221 65%, #040811 100%);
+  --envelope-bg: rgba(9, 18, 33, 0.88);
+  --glass-bg: rgba(20, 38, 66, 0.58);
+  --glass-border: rgba(180, 205, 235, 0.25);
+  --counter-box-bg: rgba(0, 0, 0, 0.32);
+  --gold: #e2c07d;
+  --gold-light: #f7e8c8;
+  --rose-gold: #b8cde5;
+  --seal-main: #1f4068;
+  --seal-dark: #0f203c;
+  --seal-text: #f7e8c8;
+  --text-main: #f8fbff;
+  --text-muted: #a9bbd1;
+  --play-btn-text: #091221;
+  --particle-rgb: 226, 192, 125;
+}
+
+/* 10. CELESTE (Tema Claro: Azul Cielo Pastel y Plata) */
+body[data-theme="celeste"] {
+  --body-outer: #dce8f2;
+  --bg-gradient: radial-gradient(circle at 50% 15%, #f7fbff 0%, #e6f2fc 65%, #d3e5f5 100%);
+  --envelope-bg: rgba(252, 254, 255, 0.92);
+  --glass-bg: rgba(255, 255, 255, 0.75);
+  --glass-border: rgba(90, 142, 191, 0.3);
+  --counter-box-bg: rgba(90, 142, 191, 0.1);
+  --gold: #4a82b8;
+  --gold-light: #23517d;
+  --rose-gold: #6492bf;
+  --seal-main: #558ec4;
+  --seal-dark: #2f5f8f;
+  --seal-text: #ffffff;
+  --text-main: #18324a;
+  --text-muted: #52718f;
+  --play-btn-text: #ffffff;
+  --particle-rgb: 74, 130, 184;
+}
+
+/* 11. GIRASOL (Ámbar Dorado y Tierra Cálida) */
+body[data-theme="girasol"] {
+  --body-outer: #0a0602;
+  --bg-gradient: radial-gradient(circle at 50% 15%, #38260d 0%, #1a1105 65%, #0a0602 100%);
+  --envelope-bg: rgba(26, 17, 5, 0.88);
+  --glass-bg: rgba(56, 38, 13, 0.58);
+  --glass-border: rgba(245, 208, 125, 0.28);
+  --counter-box-bg: rgba(0, 0, 0, 0.3);
+  --gold: #f5b82e;
+  --gold-light: #ffebad;
+  --rose-gold: #e8c590;
+  --seal-main: #c47412;
+  --seal-dark: #733f04;
+  --seal-text: #ffebad;
+  --text-main: #fffdf9;
+  --text-muted: #d6c3a5;
+  --play-btn-text: #1a1105;
+  --particle-rgb: 245, 184, 46;
+}
+
+/* 12. LAVANDA (Morado Amatista y Destellos Lila) */
+body[data-theme="lavanda"] {
+  --body-outer: #08040d;
+  --bg-gradient: radial-gradient(circle at 50% 15%, #2e1642 0%, #160a21 65%, #09040e 100%);
+  --envelope-bg: rgba(22, 10, 33, 0.88);
+  --glass-bg: rgba(46, 22, 66, 0.58);
+  --glass-border: rgba(216, 180, 248, 0.26);
+  --counter-box-bg: rgba(0, 0, 0, 0.3);
+  --gold: #c084fc;
+  --gold-light: #f3e8ff;
+  --rose-gold: #d8b4fe;
+  --seal-main: #6b21a8;
+  --seal-dark: #3b0764;
+  --seal-text: #f3e8ff;
+  --text-main: #faf5ff;
+  --text-muted: #cbb5e0;
+  --play-btn-text: #160a21;
+  --particle-rgb: 192, 132, 252;
+}
+
+/* 13. LILA (Tema Claro: Lila Pastel y Blanco Perla) */
+body[data-theme="lila"] {
+  --body-outer: #e9e0f2;
+  --bg-gradient: radial-gradient(circle at 50% 15%, #fcfaff 0%, #f2ebfa 65%, #e3d6f2 100%);
+  --envelope-bg: rgba(253, 251, 255, 0.92);
+  --glass-bg: rgba(255, 255, 255, 0.75);
+  --glass-border: rgba(154, 115, 199, 0.3);
+  --counter-box-bg: rgba(154, 115, 199, 0.1);
+  --gold: #8b5cf6;
+  --gold-light: #5b21b6;
+  --rose-gold: #9370db;
+  --seal-main: #9061f9;
+  --seal-dark: #5b21b6;
+  --seal-text: #ffffff;
+  --text-main: #2e1a47;
+  --text-muted: #695285;
+  --play-btn-text: #ffffff;
+  --particle-rgb: 139, 92, 246;
+}
+
+/* 14. CHOCOLATE (Moka, Café, Cajas con Ferrero y Oro Rosa) */
+body[data-theme="chocolate"] {
+  --body-outer: #0a0604;
+  --bg-gradient: radial-gradient(circle at 50% 15%, #362016 0%, #1c100b 65%, #0c0704 100%);
+  --envelope-bg: rgba(28, 16, 11, 0.88);
+  --glass-bg: rgba(54, 32, 22, 0.6);
+  --glass-border: rgba(224, 182, 148, 0.26);
+  --counter-box-bg: rgba(0, 0, 0, 0.32);
+  --gold: #d99b66;
+  --gold-light: #fae1c8;
+  --rose-gold: #e0b694;
+  --seal-main: #7c3f1c;
+  --seal-dark: #45200b;
+  --seal-text: #fae1c8;
+  --text-main: #fdf8f5;
+  --text-muted: #ccb2a1;
+  --play-btn-text: #1c100b;
+  --particle-rgb: 217, 155, 102;
+}
+
+/* 15. TERRACOTA (Cobre Cálido, Durazno y Flores Bohemias) */
+body[data-theme="terracota"] {
+  --body-outer: #0d0604;
+  --bg-gradient: radial-gradient(circle at 50% 15%, #421e14 0%, #210e09 65%, #0f0604 100%);
+  --envelope-bg: rgba(33, 14, 9, 0.88);
+  --glass-bg: rgba(66, 30, 20, 0.58);
+  --glass-border: rgba(242, 178, 148, 0.28);
+  --counter-box-bg: rgba(0, 0, 0, 0.3);
+  --gold: #eb8a64;
+  --gold-light: #ffdbc9;
+  --rose-gold: #f2b294;
+  --seal-main: #a84225;
+  --seal-dark: #611f0d;
+  --seal-text: #ffdbc9;
+  --text-main: #fff8f5;
+  --text-muted: #dbb2a2;
+  --play-btn-text: #210e09;
+  --particle-rgb: 235, 138, 100;
+}
+
+/* 16. NAVIDAD (Especial Campaña: Verde Pino, Sello Rojo Lacre y Oro) */
+body[data-theme="navidad"] {
+  --body-outer: #040906;
+  --bg-gradient: radial-gradient(circle at 50% 15%, #163622 0%, #091a10 65%, #040c07 100%);
+  --envelope-bg: rgba(12, 28, 18, 0.88);
+  --glass-bg: rgba(24, 54, 35, 0.6);
+  --glass-border: rgba(212, 175, 55, 0.35);
+  --counter-box-bg: rgba(0, 0, 0, 0.32);
+  --gold: #e5b842;
+  --gold-light: #fff0c2;
+  --rose-gold: #e8c97a;
+  --seal-main: #a81c24;
+  --seal-dark: #5e0b10;
+  --seal-text: #fff0c2;
+  --text-main: #fcfbf7;
+  --text-muted: #b7ccb9;
+  --play-btn-text: #091a10;
+  --particle-rgb: 229, 184, 66;
+}
+
+/* 17. DORADO (Oro Puro y Bronce Oscuro) */
+body[data-theme="dorado"] {
+  --body-outer: #0a0803;
+  --bg-gradient: radial-gradient(circle at 50% 15%, #3d2f0d 0%, #1c1505 65%, #0a0702 100%);
+  --envelope-bg: rgba(28, 21, 5, 0.88);
+  --glass-bg: rgba(58, 44, 12, 0.58);
+  --glass-border: rgba(255, 215, 0, 0.32);
+  --counter-box-bg: rgba(0, 0, 0, 0.35);
+  --gold: #ffd700;
+  --gold-light: #fff3b0;
+  --rose-gold: #e6c253;
+  --seal-main: #b8860b;
+  --seal-dark: #6b4c00;
+  --seal-text: #ffffff;
+  --text-main: #fffdf5;
+  --text-muted: #d9c89e;
+  --play-btn-text: #1c1505;
+  --particle-rgb: 255, 215, 0;
+}
+
+/* 18. CHAMPAGNE (Tema Claro: Crema Champagne y Oro Suave) */
+body[data-theme="champagne"] {
+  --body-outer: #efe8dc;
+  --bg-gradient: radial-gradient(circle at 50% 15%, #fffdf9 0%, #f7efe2 65%, #e8dcc8 100%);
+  --envelope-bg: rgba(255, 252, 247, 0.92);
+  --glass-bg: rgba(255, 255, 255, 0.72);
+  --glass-border: rgba(196, 154, 69, 0.32);
+  --counter-box-bg: rgba(196, 154, 69, 0.1);
+  --gold: #b88b32;
+  --gold-light: #785513;
+  --rose-gold: #9c7a3c;
+  --seal-main: #c79c46;
+  --seal-dark: #8a651b;
+  --seal-text: #ffffff;
+  --text-main: #332818;
+  --text-muted: #756348;
+  --play-btn-text: #ffffff;
+  --particle-rgb: 184, 139, 50;
+}
+
+/* 19. FUCSIA (Magenta Vibrante y Plata) */
+body[data-theme="fucsia"] {
+  --body-outer: #0f0208;
+  --bg-gradient: radial-gradient(circle at 50% 15%, #590d32 0%, #290517 65%, #120109 100%);
+  --envelope-bg: rgba(41, 5, 23, 0.88);
+  --glass-bg: rgba(89, 13, 50, 0.55);
+  --glass-border: rgba(255, 102, 178, 0.32);
+  --counter-box-bg: rgba(0, 0, 0, 0.3);
+  --gold: #ff4da6;
+  --gold-light: #ffcce6;
+  --rose-gold: #f09ac6;
+  --seal-main: #d6006e;
+  --seal-dark: #7a003f;
+  --seal-text: #ffffff;
+  --text-main: #fff5fa;
+  --text-muted: #e0abc6;
+  --play-btn-text: #ffffff;
+  --particle-rgb: 255, 77, 166;
+}
+
+/* 20. CEREZA (Rojo Cereza Vibrante y Oro Rosa) */
+body[data-theme="cereza"] {
+  --body-outer: #0f0204;
+  --bg-gradient: radial-gradient(circle at 50% 15%, #520a16 0%, #26040a 65%, #120104 100%);
+  --envelope-bg: rgba(38, 4, 10, 0.88);
+  --glass-bg: rgba(82, 10, 22, 0.58);
+  --glass-border: rgba(255, 138, 158, 0.3);
+  --counter-box-bg: rgba(0, 0, 0, 0.32);
+  --gold: #ff5c77;
+  --gold-light: #ffd6dd;
+  --rose-gold: #ff99aa;
+  --seal-main: #c91432;
+  --seal-dark: #730618;
+  --seal-text: #fff0f3;
+  --text-main: #fff7f8;
+  --text-muted: #e0b4bc;
+  --play-btn-text: #26040a;
+  --particle-rgb: 255, 92, 119;
+}
+
+/* 21. FRAMBUESA (Berry Profundo y Cuarzo) */
+body[data-theme="frambuesa"] {
+  --body-outer: #0d0307;
+  --bg-gradient: radial-gradient(circle at 50% 15%, #451024 0%, #210711 65%, #0d0206 100%);
+  --envelope-bg: rgba(33, 7, 17, 0.88);
+  --glass-bg: rgba(69, 16, 36, 0.58);
+  --glass-border: rgba(237, 154, 184, 0.28);
+  --counter-box-bg: rgba(0, 0, 0, 0.3);
+  --gold: #e86f9a;
+  --gold-light: #fce1eb;
+  --rose-gold: #eba7bf;
+  --seal-main: #9e224f;
+  --seal-dark: #570d28;
+  --seal-text: #fce1eb;
+  --text-main: #fff7fa;
+  --text-muted: #d6aebc;
+  --play-btn-text: #210711;
+  --particle-rgb: 232, 111, 154;
+}
+
+/* 22. VINO (Borgoña Oscuro y Cobre) */
+body[data-theme="vino"] {
+  --body-outer: #080203;
+  --bg-gradient: radial-gradient(circle at 50% 15%, #2b0910 0%, #140407 65%, #080103 100%);
+  --envelope-bg: rgba(20, 4, 7, 0.9);
+  --glass-bg: rgba(43, 9, 16, 0.62);
+  --glass-border: rgba(217, 144, 115, 0.26);
+  --counter-box-bg: rgba(0, 0, 0, 0.38);
+  --gold: #d99073;
+  --gold-light: #f7dcd0;
+  --rose-gold: #c98a70;
+  --seal-main: #631021;
+  --seal-dark: #36050f;
+  --seal-text: #f7dcd0;
+  --text-main: #fcf7f5;
+  --text-muted: #bfa399;
+  --play-btn-text: #140407;
+  --particle-rgb: 217, 144, 115;
+}
+
+/* 23. CORAL (Coral Cálido y Dorado) */
+body[data-theme="coral"] {
+  --body-outer: #0f0504;
+  --bg-gradient: radial-gradient(circle at 50% 15%, #4a1c17 0%, #240c0a 65%, #0f0403 100%);
+  --envelope-bg: rgba(36, 12, 10, 0.88);
+  --glass-bg: rgba(74, 28, 23, 0.58);
+  --glass-border: rgba(255, 160, 138, 0.3);
+  --counter-box-bg: rgba(0, 0, 0, 0.3);
+  --gold: #ff8566;
+  --gold-light: #ffddd4;
+  --rose-gold: #ffb09c;
+  --seal-main: #cf4a2b;
+  --seal-dark: #78220e;
+  --seal-text: #fff5f2;
+  --text-main: #fff8f6;
+  --text-muted: #e0b8b0;
+  --play-btn-text: #240c0a;
+  --particle-rgb: 255, 133, 102;
+}
+
+/* 24. DURAZNO (Tema Claro: Peach Pastel y Oro Rosa) */
+body[data-theme="durazno"] {
+  --body-outer: #f5e4dc;
+  --bg-gradient: radial-gradient(circle at 50% 15%, #fff9f6 0%, #ffede5 65%, #f5d8cc 100%);
+  --envelope-bg: rgba(255, 250, 248, 0.92);
+  --glass-bg: rgba(255, 255, 255, 0.74);
+  --glass-border: rgba(217, 126, 95, 0.32);
+  --counter-box-bg: rgba(217, 126, 95, 0.1);
+  --gold: #d46b47;
+  --gold-light: #8f3b1e;
+  --rose-gold: #b86b52;
+  --seal-main: #e07a58;
+  --seal-dark: #9c4528;
+  --seal-text: #ffffff;
+  --text-main: #3b2016;
+  --text-muted: #7d5345;
+  --play-btn-text: #ffffff;
+  --particle-rgb: 212, 107, 71;
+}
+
+/* 25. AZUL REAL (Zafiro Intenso y Oro) */
+body[data-theme="azul-real"] {
+  --body-outer: #020612;
+  --bg-gradient: radial-gradient(circle at 50% 15%, #0d2766 0%, #061333 65%, #020714 100%);
+  --envelope-bg: rgba(6, 19, 51, 0.88);
+  --glass-bg: rgba(13, 39, 102, 0.55);
+  --glass-border: rgba(212, 175, 55, 0.32);
+  --counter-box-bg: rgba(0, 0, 0, 0.35);
+  --gold: #ebd178;
+  --gold-light: #fff6d6;
+  --rose-gold: #9ab8f5;
+  --seal-main: #1842a8;
+  --seal-dark: #0a215c;
+  --seal-text: #fff6d6;
+  --text-main: #f5f8ff;
+  --text-muted: #a3bae6;
+  --play-btn-text: #061333;
+  --particle-rgb: 235, 209, 120;
+}
+
+/* 26. MARINO (Azul Marino Clásico y Plata) */
+body[data-theme="marino"] {
+  --body-outer: #03070e;
+  --bg-gradient: radial-gradient(circle at 50% 15%, #112233 0%, #08111a 65%, #03070b 100%);
+  --envelope-bg: rgba(8, 17, 26, 0.9);
+  --glass-bg: rgba(17, 34, 51, 0.6);
+  --glass-border: rgba(190, 210, 230, 0.25);
+  --counter-box-bg: rgba(0, 0, 0, 0.35);
+  --gold: #b8d0e8;
+  --gold-light: #f0f6fc;
+  --rose-gold: #8caac7;
+  --seal-main: #1d3b59;
+  --seal-dark: #0c1d2e;
+  --seal-text: #f0f6fc;
+  --text-main: #f4f8fc;
+  --text-muted: #93acc4;
+  --play-btn-text: #08111a;
+  --particle-rgb: 184, 208, 232;
+}
+
+/* 27. TURQUESA (Turquesa Profundo y Plata) */
+body[data-theme="turquesa"] {
+  --body-outer: #020a0a;
+  --bg-gradient: radial-gradient(circle at 50% 15%, #0c3b3d 0%, #051c1d 65%, #020a0a 100%);
+  --envelope-bg: rgba(5, 28, 29, 0.88);
+  --glass-bg: rgba(12, 59, 61, 0.58);
+  --glass-border: rgba(125, 232, 235, 0.28);
+  --counter-box-bg: rgba(0, 0, 0, 0.32);
+  --gold: #5ce1e6;
+  --gold-light: #d9fcff;
+  --rose-gold: #9ae8eb;
+  --seal-main: #10787c;
+  --seal-dark: #064245;
+  --seal-text: #d9fcff;
+  --text-main: #f2fefe;
+  --text-muted: #9ecfd1;
+  --play-btn-text: #051c1d;
+  --particle-rgb: 92, 225, 230;
+}
+
+/* 28. TIFFANY (Tema Claro: Azul Tiffany y Plata) */
+body[data-theme="tiffany"] {
+  --body-outer: #d5ebe9;
+  --bg-gradient: radial-gradient(circle at 50% 15%, #f7fffe 0%, #e1f5f3 65%, #cbe8e5 100%);
+  --envelope-bg: rgba(252, 255, 255, 0.92);
+  --glass-bg: rgba(255, 255, 255, 0.75);
+  --glass-border: rgba(59, 158, 150, 0.32);
+  --counter-box-bg: rgba(59, 158, 150, 0.1);
+  --gold: #2c8c84;
+  --gold-light: #135751;
+  --rose-gold: #4ea39b;
+  --seal-main: #3ab0a6;
+  --seal-dark: #1f736b;
+  --seal-text: #ffffff;
+  --text-main: #123835;
+  --text-muted: #4b7874;
+  --play-btn-text: #ffffff;
+  --particle-rgb: 44, 140, 132;
+}
+
+/* 29. MENTA (Tema Claro: Verde Menta Pastel y Dorado) */
+body[data-theme="menta"] {
+  --body-outer: #daf0e4;
+  --bg-gradient: radial-gradient(circle at 50% 15%, #f7fffb 0%, #e6f7ee 65%, #d0ebd9 100%);
+  --envelope-bg: rgba(252, 255, 253, 0.92);
+  --glass-bg: rgba(255, 255, 255, 0.75);
+  --glass-border: rgba(72, 158, 114, 0.3);
+  --counter-box-bg: rgba(72, 158, 114, 0.1);
+  --gold: #3c8f63;
+  --gold-light: #1c5939;
+  --rose-gold: #5ca37d;
+  --seal-main: #4ca676;
+  --seal-dark: #286b47;
+  --seal-text: #ffffff;
+  --text-main: #163826;
+  --text-muted: #4b7860;
+  --play-btn-text: #ffffff;
+  --particle-rgb: 60, 143, 99;
+}
+
+/* 30. OLIVA (Verde Oliva Oscuro y Oro Viejo) */
+body[data-theme="oliva"] {
+  --body-outer: #070804;
+  --bg-gradient: radial-gradient(circle at 50% 15%, #282e18 0%, #14170b 65%, #070803 100%);
+  --envelope-bg: rgba(20, 23, 11, 0.88);
+  --glass-bg: rgba(40, 46, 24, 0.58);
+  --glass-border: rgba(207, 192, 138, 0.28);
+  --counter-box-bg: rgba(0, 0, 0, 0.32);
+  --gold: #c9b468;
+  --gold-light: #f2e8c4;
+  --rose-gold: #b8c299;
+  --seal-main: #556132;
+  --seal-dark: #2d3618;
+  --seal-text: #f2e8c4;
+  --text-main: #fafaf5;
+  --text-muted: #b9bfa8;
+  --play-btn-text: #14170b;
+  --particle-rgb: 201, 180, 104;
+}
+
+/* 31. COBRE (Bronce Metálico y Carbón) */
+body[data-theme="cobre"] {
+  --body-outer: #0a0605;
+  --bg-gradient: radial-gradient(circle at 50% 15%, #331f19 0%, #170e0b 65%, #080403 100%);
+  --envelope-bg: rgba(23, 14, 11, 0.88);
+  --glass-bg: rgba(51, 31, 25, 0.6);
+  --glass-border: rgba(217, 138, 108, 0.28);
+  --counter-box-bg: rgba(0, 0, 0, 0.35);
+  --gold: #d9825b;
+  --gold-light: #fad8c8;
+  --rose-gold: #cfa08c;
+  --seal-main: #8f4728;
+  --seal-dark: #4f220f;
+  --seal-text: #fad8c8;
+  --text-main: #fcf6f4;
+  --text-muted: #c4a79b;
+  --play-btn-text: #170e0b;
+  --particle-rgb: 217, 130, 91;
+}
+
+/* 32. ARENA (Tema Claro: Beige Boho y Tierra) */
+body[data-theme="arena"] {
+  --body-outer: #e8dfd5;
+  --bg-gradient: radial-gradient(circle at 50% 15%, #fdfbf9 0%, #f2ece4 65%, #e3d8cb 100%);
+  --envelope-bg: rgba(252, 250, 247, 0.92);
+  --glass-bg: rgba(255, 255, 255, 0.74);
+  --glass-border: rgba(166, 133, 102, 0.3);
+  --counter-box-bg: rgba(166, 133, 102, 0.1);
+  --gold: #9c7552;
+  --gold-light: #5e4126;
+  --rose-gold: #8c6f56;
+  --seal-main: #ab825d;
+  --seal-dark: #705034;
+  --seal-text: #ffffff;
+  --text-main: #2e231a;
+  --text-muted: #6e5a49;
+  --play-btn-text: #ffffff;
+  --particle-rgb: 156, 117, 82;
+}
+
+/* 33. PERLA (Tema Claro: Gris Perla Nacarado y Plata) */
+body[data-theme="perla"] {
+  --body-outer: #e4e7eb;
+  --bg-gradient: radial-gradient(circle at 50% 15%, #ffffff 0%, #f1f3f5 65%, #dee2e6 100%);
+  --envelope-bg: rgba(255, 255, 255, 0.92);
+  --glass-bg: rgba(255, 255, 255, 0.78);
+  --glass-border: rgba(134, 142, 150, 0.3);
+  --counter-box-bg: rgba(134, 142, 150, 0.1);
+  --gold: #6c757d;
+  --gold-light: #343a40;
+  --rose-gold: #868e96;
+  --seal-main: #74808a;
+  --seal-dark: #495057;
+  --seal-text: #ffffff;
+  --text-main: #212529;
+  --text-muted: #6c757d;
+  --play-btn-text: #ffffff;
+  --particle-rgb: 108, 117, 125;
+}
+
+/* 34. ORQUÍDEA (Magenta Violáceo y Oro) */
+body[data-theme="orquidea"] {
+  --body-outer: #0a030d;
+  --bg-gradient: radial-gradient(circle at 50% 15%, #42124a 0%, #1f0724 65%, #0b020d 100%);
+  --envelope-bg: rgba(31, 7, 36, 0.88);
+  --glass-bg: rgba(66, 18, 74, 0.58);
+  --glass-border: rgba(235, 164, 245, 0.28);
+  --counter-box-bg: rgba(0, 0, 0, 0.3);
+  --gold: #e57ff5;
+  --gold-light: #f9dbff;
+  --rose-gold: #e0a8eb;
+  --seal-main: #9b26af;
+  --seal-dark: #560d63;
+  --seal-text: #f9dbff;
+  --text-main: #fdf7ff;
+  --text-muted: #d5b2db;
+  --play-btn-text: #1f0724;
+  --particle-rgb: 229, 127, 245;
+}
+
+/* 35. OCASO (Atardecer: Violeta a Ámbar Dorado) */
+body[data-theme="ocaso"] {
+  --body-outer: #0d0508;
+  --bg-gradient: radial-gradient(circle at 50% 15%, #4a1c34 0%, #240d1d 60%, #12060e 100%);
+  --envelope-bg: rgba(36, 13, 29, 0.88);
+  --glass-bg: rgba(74, 28, 52, 0.56);
+  --glass-border: rgba(255, 179, 128, 0.3);
+  --counter-box-bg: rgba(0, 0, 0, 0.32);
+  --gold: #ffa366;
+  --gold-light: #ffe0cc;
+  --rose-gold: #ff99ac;
+  --seal-main: #c94b4b;
+  --seal-dark: #6e1d2a;
+  --seal-text: #ffe0cc;
+  --text-main: #fff9f5;
+  --text-muted: #deb4c0;
+  --play-btn-text: #240d1d;
+  --particle-rgb: 255, 163, 102;
+}
+
+/* 36. GALAXIA (Espacio Profundo: Violeta Cósmico y Plata) */
+body[data-theme="galaxia"] {
+  --body-outer: #03020a;
+  --bg-gradient: radial-gradient(circle at 50% 15%, #1e1345 0%, #0d0722 65%, #04020d 100%);
+  --envelope-bg: rgba(13, 7, 34, 0.88);
+  --glass-bg: rgba(30, 19, 69, 0.58);
+  --glass-border: rgba(179, 168, 248, 0.28);
+  --counter-box-bg: rgba(0, 0, 0, 0.35);
+  --gold: #a594f9;
+  --gold-light: #e5d9f2;
+  --rose-gold: #b8c0ff;
+  --seal-main: #4a309c;
+  --seal-dark: #241359;
+  --seal-text: #e5d9f2;
+  --text-main: #f7f5ff;
+  --text-muted: #b5add9;
+  --play-btn-text: #0d0722;
+  --particle-rgb: 165, 148, 249;
+}
+
+/* 37. AURORA (Verde Azulado Nocturno y Destellos Menta/Lila) */
+body[data-theme="aurora"] {
+  --body-outer: #03090d;
+  --bg-gradient: radial-gradient(circle at 50% 15%, #0f363d 0%, #091926 65%, #03080d 100%);
+  --envelope-bg: rgba(9, 25, 38, 0.88);
+  --glass-bg: rgba(15, 54, 61, 0.56);
+  --glass-border: rgba(128, 245, 212, 0.28);
+  --counter-box-bg: rgba(0, 0, 0, 0.32);
+  --gold: #64dfdf;
+  --gold-light: #d8f8f8;
+  --rose-gold: #b8b8ff;
+  --seal-main: #2b7a78;
+  --seal-dark: #144241;
+  --seal-text: #d8f8f8;
+  --text-main: #f2fefe;
+  --text-muted: #a0cfd1;
+  --play-btn-text: #091926;
+  --particle-rgb: 100, 223, 223;
+}
+
+/* 38. ALGODÓN (Tema Claro: Cotton Candy Rosa y Celeste Pastel) */
+body[data-theme="algodon"] {
+  --body-outer: #e8e2f0;
+  --bg-gradient: radial-gradient(circle at 50% 15%, #fff7fb 0%, #f0f4ff 60%, #e5dcf2 100%);
+  --envelope-bg: rgba(255, 252, 255, 0.92);
+  --glass-bg: rgba(255, 255, 255, 0.75);
+  --glass-border: rgba(212, 138, 184, 0.32);
+  --counter-box-bg: rgba(138, 172, 212, 0.12);
+  --gold: #cc66a3;
+  --gold-light: #5d6d9e;
+  --rose-gold: #8a9ad4;
+  --seal-main: #d97ab3;
+  --seal-dark: #994678;
+  --seal-text: #ffffff;
+  --text-main: #2e243b;
+  --text-muted: #6c5d80;
+  --play-btn-text: #ffffff;
+  --particle-rgb: 204, 102, 163;
+}
+
+/* 39. SAN VALENTÍN (Rojo Pasión, Rosa y Dorado) */
+body[data-theme="san-valentin"] {
+  --body-outer: #120205;
+  --bg-gradient: radial-gradient(circle at 50% 15%, #610c21 0%, #2e050f 65%, #140106 100%);
+  --envelope-bg: rgba(46, 5, 15, 0.88);
+  --glass-bg: rgba(97, 12, 33, 0.58);
+  --glass-border: rgba(255, 184, 198, 0.32);
+  --counter-box-bg: rgba(0, 0, 0, 0.32);
+  --gold: #ffccd5;
+  --gold-light: #fff0f3;
+  --rose-gold: #ff8fa3;
+  --seal-main: #d90429;
+  --seal-dark: #800016;
+  --seal-text: #fff0f3;
+  --text-main: #fff5f7;
+  --text-muted: #e8b3be;
+  --play-btn-text: #2e050f;
+  --particle-rgb: 255, 143, 163;
+}
+
+/* 40. HALLOWEEN (Especial Octubre: Naranja, Morado Noche y Oro) */
+body[data-theme="halloween"] {
+  --body-outer: #07030a;
+  --bg-gradient: radial-gradient(circle at 50% 15%, #2b113d 0%, #14071c 65%, #07020a 100%);
+  --envelope-bg: rgba(20, 7, 28, 0.9);
+  --glass-bg: rgba(43, 17, 61, 0.6);
+  --glass-border: rgba(255, 136, 0, 0.32);
+  --counter-box-bg: rgba(0, 0, 0, 0.38);
+  --gold: #ff8800;
+  --gold-light: #ffd299;
+  --rose-gold: #c77dff;
+  --seal-main: #e06000;
+  --seal-dark: #803300;
+  --seal-text: #fff3e0;
+  --text-main: #fcf7ff;
+  --text-muted: #c8b6d6;
+  --play-btn-text: #14071c;
+  --particle-rgb: 255, 136, 0;
+}
+/* =========================================================================
+   2. ESTILOS BASE Y ESTRUCTURA
+   ========================================================================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background-color: var(--body-outer);
+  color: var(--text-main);
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  overflow-x: hidden;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+.app-container {
+  position: relative;
+  width: 100%;
+  max-width: 430px;
+  min-height: 100vh;
+  background: var(--bg-gradient);
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+  overflow-x: hidden;
+  padding-bottom: 50px;
+}
+
+#particles-canvas {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 430px;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.content-wrapper {
+  position: relative;
+  z-index: 2;
+  padding: 28px 20px;
+}
+
+/* Animación de entrada escalonada cuando se abre el sobre */
+.reveal-item {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.app-container.revealed .reveal-item:nth-child(1) { opacity: 1; transform: translateY(0); transition-delay: 0.1s; }
+.app-container.revealed .reveal-item:nth-child(2) { opacity: 1; transform: translateY(0); transition-delay: 0.25s; }
+.app-container.revealed .reveal-item:nth-child(3) { opacity: 1; transform: translateY(0); transition-delay: 0.4s; }
+.app-container.revealed .reveal-item:nth-child(4) { opacity: 1; transform: translateY(0); transition-delay: 0.55s; }
+.app-container.revealed .reveal-item:nth-child(5) { opacity: 1; transform: translateY(0); transition-delay: 0.7s; }
+.app-container.revealed .reveal-item:nth-child(6) { opacity: 1; transform: translateY(0); transition-delay: 0.85s; }
+.app-container.revealed .reveal-item:nth-child(7) { opacity: 1; transform: translateY(0); transition-delay: 1.0s; }
+.app-container.revealed .reveal-item:nth-child(8) { opacity: 1; transform: translateY(0); transition-delay: 1.15s; }
+
+/* ==========================================
+   OVERLAY: SOBRE DE LUJO CON SELLO DE LACRE
+   ========================================== */
+#unboxing-overlay {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 430px;
+  height: 100vh;
+  background: var(--bg-gradient);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  overflow: hidden;
+  transition: opacity 0.7s ease, visibility 0.7s ease;
+}
+
+.ribbon-vertical, .ribbon-horizontal {
+  position: absolute;
+  background: linear-gradient(90deg, rgba(var(--particle-rgb), 0.15), rgba(var(--particle-rgb), 0.45), rgba(var(--particle-rgb), 0.15));
+  box-shadow: 0 0 20px rgba(0,0,0,0.25);
+  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease;
+  z-index: 1;
+}
+
+.ribbon-vertical {
+  width: 26px;
+  height: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.ribbon-horizontal {
+  height: 26px;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.envelope-card {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  background: var(--envelope-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  padding: 36px 24px;
+  text-align: center;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35), inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+  transition: transform 0.65s ease, opacity 0.65s ease;
+}
+
+.brand-badge {
+  display: inline-block;
+  font-size: 0.65rem;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 18px;
+  border: 1px solid var(--glass-border);
+  padding: 5px 14px;
+  border-radius: 50px;
+  background: rgba(var(--particle-rgb), 0.08);
+}
+
+.for-label {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  color: var(--rose-gold);
+  font-size: 1.05rem;
+  margin-bottom: 6px;
+}
+
+.unboxing-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.75rem;
+  color: var(--text-main);
+  margin-bottom: 28px;
+  line-height: 1.3;
+  font-weight: 500;
+}
+
+/* Sello de Lacre Realista */
+.wax-seal-wrapper {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  margin-bottom: 26px;
+  user-select: none;
+}
+
+.wax-seal-ring {
+  position: absolute;
+  top: -8px;
+  width: 118px;
+  height: 118px;
+  border-radius: 50%;
+  border: 1px solid var(--gold);
+  opacity: 0.4;
+  animation: pulseRing 2.4s infinite ease-out;
+}
+
+@keyframes pulseRing {
+  0% { transform: scale(0.92); opacity: 0.65; }
+  100% { transform: scale(1.22); opacity: 0; }
+}
+
+.wax-seal {
+  width: 102px;
+  height: 102px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 32% 28%, var(--seal-main) 0%, var(--seal-dark) 88%);
+  box-shadow: 
+    0 10px 25px rgba(0, 0, 0, 0.45),
+    inset 0 3px 6px rgba(255, 255, 255, 0.28),
+    inset 0 -4px 8px rgba(0, 0, 0, 0.55),
+    0 0 0 3px rgba(var(--particle-rgb), 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: transform 0.25s ease;
+}
+
+.wax-seal-wrapper:active .wax-seal {
+  transform: scale(0.92);
+}
+
+.seal-svg {
+  position: absolute;
+  width: 88px;
+  height: 88px;
+}
+
+.seal-initials {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.35rem;
+  letter-spacing: 2px;
+  color: var(--seal-text);
+  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.45);
+  font-weight: 700;
+}
+
+.tap-hint {
+  margin-top: 14px;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.unboxing-subtitle {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* Animación al romper el sello */
+#unboxing-overlay.opening .wax-seal {
+  transform: scale(1.25) rotate(12deg);
+  opacity: 0;
+  transition: all 0.45s ease;
+}
+#unboxing-overlay.opening .ribbon-vertical {
+  transform: translateX(-50%) scaleY(0);
+  opacity: 0;
+}
+#unboxing-overlay.opening .ribbon-horizontal {
+  transform: translateY(-50%) scaleX(0);
+  opacity: 0;
+}
+#unboxing-overlay.opening .envelope-card {
+  transform: scale(1.06) translateY(-15px);
+  opacity: 0;
+}
+#unboxing-overlay.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* ==========================================
+   CABECERA Y REPRODUCTOR
+   ========================================== */
+.header {
+  text-align: center;
+  margin-bottom: 22px;
+}
+
+.header-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.35rem;
+  letter-spacing: 3px;
+  color: var(--gold-light);
+  font-weight: 700;
+}
+
+.header-tag {
+  font-size: 0.65rem;
+  color: var(--rose-gold);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  padding: 18px;
+  margin-bottom: 22px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+}
+
+.audio-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: linear-gradient(135deg, rgba(var(--particle-rgb), 0.12), var(--glass-bg));
+}
+
+.play-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--gold), var(--gold-light));
+  color: var(--play-btn-text);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+}
+
+.audio-info {
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+.audio-badge {
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: var(--gold);
+  display: block;
+  margin-bottom: 3px;
+  font-weight: 600;
+}
+
+.audio-title {
+  font-size: 0.88rem;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 8px;
+  color: var(--text-main);
+}
+
+.waveform {
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  height: 15px;
+}
+
+.bar {
+  width: 3px;
+  background: var(--rose-gold);
+  border-radius: 2px;
+  height: 4px;
+}
+
+.waveform.playing .bar {
+  animation: soundBounce 0.75s infinite ease-in-out alternate;
+}
+.waveform.playing .bar:nth-child(odd) { animation-delay: 0.15s; }
+.waveform.playing .bar:nth-child(3n) { animation-delay: 0.35s; }
+.waveform.playing .bar:nth-child(4n) { animation-delay: 0.05s; }
+
+@keyframes soundBounce {
+  0% { height: 4px; opacity: 0.5; }
+  100% { height: 15px; background: var(--gold); opacity: 1; }
+}
+
+/* ==========================================
+   CONTADOR DE TIEMPO JUNTOS
+   ========================================== */
+.counter-card {
+  text-align: center;
+  padding: 16px;
+}
+
+.counter-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--rose-gold);
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.counter-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.counter-box {
+  background: var(--counter-box-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  padding: 10px 4px;
+}
+
+.counter-box span {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--gold-light);
+}
+
+.counter-box small {
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+}
+
+/* ==========================================
+   CARRUSEL POLAROID CON GIRO 3D
+   ========================================== */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  color: var(--gold-light);
+  font-weight: 600;
+}
+
+.section-hint {
+  font-size: 0.68rem;
+  color: var(--rose-gold);
+  font-weight: 500;
+}
+
+.carousel {
+  display: flex;
+  gap: 18px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 8px 4px 18px 4px;
+  margin-bottom: 18px;
+  scrollbar-width: none;
+}
+.carousel::-webkit-scrollbar { display: none; }
+
+.polaroid-scene {
+  scroll-snap-align: center;
+  min-width: 248px;
+  height: 305px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.polaroid-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.65s cubic-bezier(0.4, 0.2, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.polaroid-scene.is-flipped .polaroid-inner {
+  transform: rotateY(180deg);
+}
+
+.polaroid-front, .polaroid-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: 12px;
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.28);
+}
+
+.polaroid-front {
+  background: #fdfbf7;
+  padding: 10px 10px 16px 10px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.polaroid-img-wrapper {
+  position: relative;
+  width: 100%;
+  height: 230px;
+  overflow: hidden;
+  border-radius: 6px;
+  margin-bottom: 12px;
+}
+
+.polaroid-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.flip-badge {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  background: rgba(18, 8, 12, 0.72);
+  backdrop-filter: blur(4px);
+  color: #fff;
+  font-size: 0.62rem;
+  padding: 4px 9px;
+  border-radius: 20px;
+  letter-spacing: 0.5px;
+}
+
+.polaroid-caption {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  color: #2b111e;
+  text-align: center;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.polaroid-back {
+  background: #f7f2e7;
+  color: #2c1820;
+  transform: rotateY(180deg);
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid #e2d9c5;
+}
+
+.back-stamp {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #8c6d53;
+  border-bottom: 1px dashed #d5c7b2;
+  padding-bottom: 8px;
+}
+
+.back-note {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: #2b111e;
+  text-align: center;
+}
+
+.back-footer {
+  text-align: right;
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.35rem;
+  color: #6e1f32;
+}
+
+/* ==========================================
+   CARTA Y FIRMA MANUSCRITA
+   ========================================== */
+.letter-card {
+  padding: 26px 22px;
+  border-left: 3px solid var(--gold);
+}
+
+.letter-greeting {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  color: var(--gold-light);
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.letter-quote {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.02rem;
+  line-height: 1.75;
+  color: var(--text-main);
+  margin-bottom: 16px;
+}
+
+.letter-despedida {
+  text-align: right;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.letter-sign {
+  text-align: right;
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.85rem;
+  color: var(--gold-light);
+  margin-top: 2px;
+}
+
+/* ==========================================
+   CÁPSULA SECRETA FINAL
+   ========================================== */
+.secret-promise-wrapper {
+  text-align: center;
+  margin-top: 8px;
+}
+
+.btn-secret {
+  width: 100%;
+  background: transparent;
+  border: 1px dashed var(--gold);
+  color: var(--gold-light);
+  padding: 14px 20px;
+  border-radius: 16px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-secret.active {
+  background: rgba(var(--particle-rgb), 0.12);
+  border-style: solid;
+}
+
+.secret-box {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  padding: 0 18px;
+  margin-top: 0;
+  border: none;
+  transition: all 0.45s ease;
+}
+
+.secret-box.open {
+  max-height: 200px;
+  opacity: 1;
+  padding: 18px;
+  margin-top: 12px;
+  border: 1px solid var(--glass-border);
+}
+
+.secret-box p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--gold-light);
+  font-weight: 500;
+}
+
+.footer {
+  text-align: center;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  margin-top: 32px;
+  opacity: 0.8;
+}

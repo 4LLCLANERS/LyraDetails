@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Lyra Details | Rincón Secreto</title>
+  
+  <!-- Google Fonts: Playfair Display, Montserrat & Great Vibes (Firma manuscrita) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+  <style>
+    #theme-explorer-btn {
+      position: fixed;
+      top: 14px;
+      right: 14px;
+      z-index: 9999;
+      background: rgba(15, 10, 12, 0.85);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      color: #fff;
+      border: 1px solid rgba(212, 175, 55, 0.6);
+      padding: 8px 14px;
+      border-radius: 50px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: transform 0.2s ease;
+    }
+    #theme-explorer-btn:active {
+      transform: scale(0.94);
+    }
+    #theme-explorer-drawer {
+      position: fixed;
+      inset: 0;
+      z-index: 10000;
+      background: rgba(5, 2, 4, 0.88);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      display: flex;
+      flex-direction: column;
+      max-width: 430px;
+      margin: 0 auto;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+    #theme-explorer-drawer.open {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+    .explorer-header {
+      padding: 20px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #fff;
+    }
+    .explorer-header h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      color: #f5e6b8;
+    }
+    .explorer-header p {
+      font-size: 0.7rem;
+      color: #cbb8c0;
+      margin-top: 2px;
+    }
+    .explorer-close {
+      background: rgba(255,255,255,0.1);
+      border: none;
+      color: #fff;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    .explorer-grid {
+      padding: 18px;
+      overflow-y: auto;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      padding-bottom: 40px;
+    }
+    .theme-chip {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 14px;
+      padding: 10px 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      text-align: left;
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      transition: all 0.2s ease;
+    }
+    .theme-chip.active {
+      border-color: #d4af37;
+      background: rgba(212, 175, 55, 0.18);
+      box-shadow: 0 0 15px rgba(212, 175, 55, 0.25);
+    }
+    .swatch-circle {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      border: 2px solid rgba(255,255,255,0.35);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+    }
+    .chip-text {
+      overflow: hidden;
+    }
+    .chip-name {
+      font-size: 0.78rem;
+      font-weight: 600;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .chip-code {
+      font-size: 0.62rem;
+      color: #aaa;
+    }
+  </style>
+</head>
+
+
+<body data-theme="rubi">
+
+  <!-- =========================================================================
+       PANEL DE PERSONALIZACIÓN RÁPIDA (SOLO EDITAR AQUÍ POR CADA CLIENTE)
+       Temas disponibles: "rubi" (Vino/Oro), "cuarzo" (Rosa Pastel), 
+                          "medianoche" (Azul/Plata), "girasol" (Cálido/Dorado)
+       ========================================================================= -->
+  <script>
+    const PEDIDO_CONFIG = {
+      tema: "celeste",
+      remitente: "Alexito",
+      destinataria: "Sofía",
+      inicialesSello: "A & S",
+      subtituloSobre: "Sube el volumen de tu celular. Toca el sello de lacre para abrir el rincón que guardé para ti.",
+      
+      // Audio / Canción IA o Cover
+      audioSrc: "images/cancionDEMO.mp3",
+      tipoAudio: "Canción Original Creada para Ti",
+      tituloAudio: "Mi Mejor Momento (Nuestra Historia)",
+      
+      // Contador de relación (Pon null si el cliente no quiere contador, ej: fechaInicio: null)
+      fechaInicio: "2024-02-14", 
+      tituloContador: "Tiempo escribiendo nuestra historia",
+
+      // Galería Polaroid (Toca la foto para girar y leer el reverso)
+      momentos: [
+        {
+          img: "images/imagen1.jpg",
+          tituloFrente: "Donde todo empezó",
+          notaReverso: "Todavía me acuerdo de los nervios que tenía ese día antes de verte llegar. Desde esa tarde supe que eras tú."
+        },
+        {
+          img: "images/imagen2.jpeg",
+          tituloFrente: "Cómplices siempre",
+          notaReverso: "Mis días favoritos no son por el lugar a donde vamos, sino por cómo nos reímos de cualquier tontería juntos."
+        },
+        {
+          img: "images/imagen3.jpeg",
+          tituloFrente: "Por mil aventuras más",
+          notaReverso: "Prometo seguir coleccionando atardeceres, viajes y cafés contigo. Gracias por ser mi paz."
+        }
+      ],
+
+      // Carta de dedicatoria
+      cartaSaludo: "Mi amor,",
+      cartaTexto: "Quería darte un detalle que no se marchitara nunca, igual que lo que siento cuando estamos juntos. Cada flor, cada nota de esta canción y cada luz guardan un pedacito de nuestra historia.",
+      cartaDespedida: "Con todo mi corazón,",
+      
+      // Promesa oculta final (Botón interactivo al final de la página)
+      mensajeSecretoBoton: "Descubre mi promesa para ti",
+      mensajeSecretoTexto: "Vale por una cena en nuestro lugar favorito y mil abrazos pendientes esta semana. ¡Te amo!"
+    };
+  </script>
+
+  <!-- Fondo de partículas luminosas -->
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- 1. OVERLAY DE SOBRE DE LUJO CON SELLO DE LACRE -->
+  <div id="unboxing-overlay">
+    <div class="ribbon-vertical"></div>
+    <div class="ribbon-horizontal"></div>
+
+    <div class="envelope-card">
+      <span class="brand-badge">Lyra Details • Private Edition</span>
+      <p class="for-label">Para <span id="ui-destinataria"></span></p>
+      <h1 class="unboxing-title"><span id="ui-remitente"></span> preparó un secreto para ti</h1>
+      
+      <!-- Sello de Lacre Interactivo (SVG sin emojis) -->
+      <div class="wax-seal-wrapper" id="btn-start" role="button" aria-label="Abrir sobre">
+        <div class="wax-seal-ring"></div>
+        <div class="wax-seal">
+          <svg viewBox="0 0 100 100" class="seal-svg">
+            <circle cx="50" cy="50" r="44" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" stroke-dasharray="3,3"/>
+            <circle cx="50" cy="50" r="38" fill="none" stroke="rgba(60,15,5,0.4)" stroke-width="1"/>
+          </svg>
+          <span class="seal-initials" id="ui-iniciales">L D</span>
+        </div>
+        <span class="tap-hint">Toca el sello para abrir</span>
+      </div>
+
+      <p class="unboxing-subtitle" id="ui-subtitulo-sobre"></p>
+    </div>
+  </div>
+
+  <!-- CONTENEDOR PRINCIPAL -->
+  <main class="app-container" id="main-content">
+    <div class="content-wrapper">
+      
+      <!-- Cabecera -->
+      <header class="header reveal-item">
+        <div class="header-logo">LYRA DETAILS</div>
+        <div class="header-tag">Rincón de Recuerdos Eternos</div>
+      </header>
+
+      <!-- 2. REPRODUCTOR DE CANCIÓN / VOZ -->
+      <audio id="bg-audio" loop preload="auto"></audio>
+
+      <section class="glass-card audio-card reveal-item">
+        <button class="play-btn" id="play-pause-btn" aria-label="Reproducir">
+          <svg id="icon-pause" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></svg>
+          <svg id="icon-play" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="display:none; margin-left:2px;"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+        </button>
+        <div class="audio-info">
+          <span class="audio-badge" id="ui-tipo-audio"></span>
+          <div class="audio-title" id="ui-titulo-audio"></div>
+          <div class="waveform" id="waveform">
+            <div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div>
+            <div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div>
+            <div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. CONTADOR DE HISTORIA (Se oculta solo si fechaInicio es null) -->
+      <section class="glass-card counter-card reveal-item" id="counter-section">
+        <div class="counter-label" id="ui-titulo-contador"></div>
+        <div class="counter-grid">
+          <div class="counter-box"><span id="cnt-days">0</span><small>Días</small></div>
+          <div class="counter-box"><span id="cnt-hours">0</span><small>Horas</small></div>
+          <div class="counter-box"><span id="cnt-mins">0</span><small>Min</small></div>
+          <div class="counter-box"><span id="cnt-secs">0</span><small>Seg</small></div>
+        </div>
+      </section>
+
+      <!-- 4. GALERÍA POLAROID CON REVERSO SECRETO 3D -->
+      <div class="section-header reveal-item">
+        <h2 class="section-title">Nuestros Instantes</h2>
+        <span class="section-hint">↻ Toca cada foto para leer atrás</span>
+      </div>
+      
+      <div class="carousel reveal-item" id="polaroid-carousel">
+        <!-- Se genera automáticamente desde PEDIDO_CONFIG -->
+      </div>
+
+      <!-- 5. CARTA MANUSCRITA -->
+      <section class="glass-card letter-card reveal-item">
+        <div class="letter-greeting" id="ui-carta-saludo"></div>
+        <p class="letter-quote" id="ui-carta-texto"></p>
+        <div class="letter- despedida" id="ui-carta-despedida"></div>
+        <div class="letter-sign" id="ui-carta-firma"></div>
+      </section>
+
+      <!-- 6. CÁPSULA SECRETA FINAL (INTERACCIÓN DE CIERRE) -->
+      <section class="secret-promise-wrapper reveal-item">
+        <button class="btn-secret" id="btn-secret">
+          <span class="lock-icon">✦</span> <span id="ui-btn-secreto"></span>
+        </button>
+        <div class="glass-card secret-box" id="secret-box">
+          <p id="ui-texto-secreto"></p>
+        </div>
+      </section>
+
+      <footer class="footer reveal-item">
+        Diseñado en exclusiva por <strong>@lyra.details</strong> • Lima, Perú
+      </footer>
+
+    </div>
+    <button id="theme-explorer-btn" style="display:none;">
+        🎨 Probar Colores (40)
+    </button>
+
+    <div id="theme-explorer-drawer">
+      <div class="explorer-header">
+        <div>
+          <h3>Catálogo de Colores Lyra</h3>
+          <p>Toca un color para reiniciar el sobre y ver el efecto</p>
+        </div>
+        <button class="explorer-close" id="explorer-close-btn">✕</button>
+      </div>
+      <div class="explorer-grid" id="explorer-grid"></div>
+    </div>
+      
+  </main>
+
+  <script>
+    // =========================================================================
+    // MOTOR DE RENDERIZADO AUTOMÁTICO (NO NECESITAS TOCAR ESTO POR CLIENTE)
+    // =========================================================================
+    document.body.setAttribute('data-theme', PEDIDO_CONFIG.tema || 'rubi');
+
+    // Textos principales
+    document.getElementById('ui-destinataria').textContent = PEDIDO_CONFIG.destinataria;
+    document.getElementById('ui-remitente').textContent = PEDIDO_CONFIG.remitente;
+    document.getElementById('ui-iniciales').textContent = PEDIDO_CONFIG.inicialesSello;
+    document.getElementById('ui-subtitulo-sobre').textContent = PEDIDO_CONFIG.subtituloSobre;
+
+    // Audio
+    const audio = document.getElementById('bg-audio');
+    audio.src = PEDIDO_CONFIG.audioSrc;
+    document.getElementById('ui-tipo-audio').textContent = PEDIDO_CONFIG.tipoAudio;
+    document.getElementById('ui-titulo-audio').textContent = PEDIDO_CONFIG.tituloAudio;
+
+    // Carta y Promesa
+    document.getElementById('ui-carta-saludo').textContent = PEDIDO_CONFIG.cartaSaludo;
+    document.getElementById('ui-carta-texto').textContent = `"${PEDIDO_CONFIG.cartaTexto}"`;
+    document.getElementById('ui-carta-despedida').textContent = PEDIDO_CONFIG.cartaDespedida;
+    document.getElementById('ui-carta-firma').textContent = PEDIDO_CONFIG.remitente;
+    document.getElementById('ui-btn-secreto').textContent = PEDIDO_CONFIG.mensajeSecretoBoton;
+    document.getElementById('ui-texto-secreto').textContent = PEDIDO_CONFIG.mensajeSecretoTexto;
+
+    // Generar Polaroids 3D
+    const carousel = document.getElementById('polaroid-carousel');
+    PEDIDO_CONFIG.momentos.forEach((m, index) => {
+      const card = document.createElement('div');
+      card.className = 'polaroid-scene';
+      card.innerHTML = `
+        <div class="polaroid-inner">
+          <div class="polaroid-front">
+            <div class="polaroid-img-wrapper">
+              <img src="${m.img}" alt="Recuerdo ${index + 1}" />
+              <span class="flip-badge">↻ Voltear</span>
+            </div>
+            <div class="polaroid-caption">${m.tituloFrente}</div>
+          </div>
+          <div class="polaroid-back">
+            <div class="back-stamp">Recuerdo #${index + 1}</div>
+            <p class="back-note">${m.notaReverso}</p>
+            <div class="back-footer">— ${PEDIDO_CONFIG.remitente}</div>
+          </div>
+        </div>
+      `;
+      card.addEventListener('click', () => card.classList.toggle('is-flipped'));
+      carousel.appendChild(card);
+    });
+
+    // Lógica del Contador
+    const counterSection = document.getElementById('counter-section');
+    if (PEDIDO_CONFIG.fechaInicio) {
+      document.getElementById('ui-titulo-contador').textContent = PEDIDO_CONFIG.tituloContador;
+      const startDate = new Date(PEDIDO_CONFIG.fechaInicio + 'T00:00:00');
+      function updateCounter() {
+        const diff = Math.max(0, new Date() - startDate);
+        document.getElementById('cnt-days').textContent = Math.floor(diff / (1000 * 60 * 60 * 24));
+        document.getElementById('cnt-hours').textContent = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        document.getElementById('cnt-mins').textContent = Math.floor((diff / 1000 / 60) % 60);
+        document.getElementById('cnt-secs').textContent = Math.floor((diff / 1000) % 60);
+      }
+      updateCounter();
+      setInterval(updateCounter, 1000);
+    } else {
+      counterSection.style.display = 'none';
+    }
+
+    // 1. APERTURA DEL SELLO DE LACRE Y AUDIO
+    const startBtn = document.getElementById('btn-start');
+    const overlay = document.getElementById('unboxing-overlay');
+    const mainContent = document.getElementById('main-content');
+    const playPauseBtn = document.getElementById('play-pause-btn');
+    const iconPause = document.getElementById('icon-pause');
+    const iconPlay = document.getElementById('icon-play');
+    const waveform = document.getElementById('waveform');
+    let isPlaying = false;
+
+    startBtn.addEventListener('click', () => {
+      overlay.classList.add('opening');
+      setTimeout(() => {
+        overlay.classList.add('hidden');
+        mainContent.classList.add('revealed');
+      }, 650);
+
+      audio.play().then(() => {
+        isPlaying = true;
+        waveform.classList.add('playing');
+      }).catch(() => {
+        isPlaying = true;
+        waveform.classList.add('playing');
+      });
+    });
+
+    playPauseBtn.addEventListener('click', () => {
+      if (isPlaying) {
+        audio.pause();
+        waveform.classList.remove('playing');
+        iconPause.style.display = 'none';
+        iconPlay.style.display = 'block';
+      } else {
+        audio.play().catch(() => {});
+        waveform.classList.add('playing');
+        iconPause.style.display = 'block';
+        iconPlay.style.display = 'none';
+      }
+      isPlaying = !isPlaying;
+    });
+
+    // Promesa secreta final
+    const btnSecret = document.getElementById('btn-secret');
+    const secretBox = document.getElementById('secret-box');
+    btnSecret.addEventListener('click', () => {
+      secretBox.classList.toggle('open');
+      btnSecret.classList.toggle('active');
+    });
+
+    // Partículas flotantes adaptadas al color del tema
+    const canvas = document.getElementById('particles-canvas');
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+
+    function resizeCanvas() {
+      canvas.width = Math.min(window.innerWidth, 430);
+      canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    for (let i = 0; i < 35; i++) {
+      particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        r: Math.random() * 2 + 0.6,
+        vy: -(Math.random() * 0.35 + 0.12),
+        alpha: Math.random() * 0.6 + 0.15
+      });
+    }
+
+    function animateParticles() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      const accentColor = getComputedStyle(document.body).getPropertyValue('--particle-rgb').trim() || '212, 175, 55';
+      particles.forEach(p => {
+        p.y += p.vy;
+        if (p.y < 0) p.y = canvas.height;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(${accentColor}, ${p.alpha})`;
+        ctx.shadowBlur = 8;
+        ctx.shadowColor = `rgb(${accentColor})`;
+        ctx.fill();
+      });
+      requestAnimationFrame(animateParticles);
+    }
+    animateParticles();
+  </script> 
+  
+  <script>
+    // PON EN "false" CUANDO ENTREGUES EL LINK A UN CLIENTE REAL
+    const ACTIVAR_CATALOGO = true;
+
+    const LISTA_TEMAS = [
+      { id: "rubi", nombre: "Rubí Clásico", bg: "#31121f", acc: "#d4af37" },
+      { id: "negro", nombre: "Negro Ónix VIP", bg: "#0a0908", acc: "#d4af37" },
+      { id: "blanco", nombre: "Blanco Marfil", bg: "#f7f4ef", acc: "#b08d44" },
+      { id: "plata", nombre: "Plata Cromada", bg: "#23272e", acc: "#cbd5e1" },
+      { id: "rosado", nombre: "Rosa Intenso", bg: "#4a1531", acc: "#ff85b3" },
+      { id: "cuarzo", nombre: "Rosa Cuarzo Pastel", bg: "#fce8ef", acc: "#c9658c" },
+      { id: "verde", nombre: "Verde Esmeralda", bg: "#0f3828", acc: "#d4af37" },
+      { id: "salvia", nombre: "Verde Salvia Claro", bg: "#eaf2ec", acc: "#4f7a5e" },
+      { id: "medianoche", nombre: "Azul Medianoche", bg: "#132542", acc: "#e2c07d" },
+      { id: "celeste", nombre: "Celeste Pastel", bg: "#e6f2fc", acc: "#4a82b8" },
+      { id: "girasol", nombre: "Girasol Dorado", bg: "#38260d", acc: "#f5b82e" },
+      { id: "lavanda", nombre: "Lavanda Amatista", bg: "#2e1642", acc: "#c084fc" },
+      { id: "lila", nombre: "Lila Pastel", bg: "#f2ebfa", acc: "#8b5cf6" },
+      { id: "chocolate", nombre: "Chocolate & Ferrero", bg: "#362016", acc: "#d99b66" },
+      { id: "terracota", nombre: "Terracota Cálido", bg: "#421e14", acc: "#eb8a64" },
+      { id: "navidad", nombre: "Navidad / Adviento", bg: "#163622", acc: "#a81c24" },
+      { id: "dorado", nombre: "Oro Puro", bg: "#3d2f0d", acc: "#ffd700" },
+      { id: "champagne", nombre: "Crema Champagne", bg: "#f7efe2", acc: "#b88b32" },
+      { id: "fucsia", nombre: "Fucsia Vibrante", bg: "#590d32", acc: "#ff4da6" },
+      { id: "cereza", nombre: "Rojo Cereza", bg: "#520a16", acc: "#ff5c77" },
+      { id: "frambuesa", nombre: "Rojo Frambuesa", bg: "#451024", acc: "#e86f9a" },
+      { id: "vino", nombre: "Vino Borgoña", bg: "#2b0910", acc: "#d99073" },
+      { id: "coral", nombre: "Coral Verano", bg: "#4a1c17", acc: "#ff8566" },
+      { id: "durazno", nombre: "Durazno Peach", bg: "#ffede5", acc: "#d46b47" },
+      { id: "azul-real", nombre: "Azul Real Zafiro", bg: "#0d2766", acc: "#ebd178" },
+      { id: "marino", nombre: "Azul Marino", bg: "#112233", acc: "#b8d0e8" },
+      { id: "turquesa", nombre: "Turquesa Profundo", bg: "#0c3b3d", acc: "#5ce1e6" },
+      { id: "tiffany", nombre: "Azul Tiffany", bg: "#e1f5f3", acc: "#2c8c84" },
+      { id: "menta", nombre: "Verde Menta", bg: "#e6f7ee", acc: "#3c8f63" },
+      { id: "oliva", nombre: "Verde Oliva", bg: "#282e18", acc: "#c9b468" },
+      { id: "cobre", nombre: "Bronce Cobre", bg: "#331f19", acc: "#d9825b" },
+      { id: "arena", nombre: "Arena Boho", bg: "#f2ece4", acc: "#9c7552" },
+      { id: "perla", nombre: "Gris Perla", bg: "#f1f3f5", acc: "#6c757d" },
+      { id: "orquidea", nombre: "Orquídea Real", bg: "#42124a", acc: "#e57ff5" },
+      { id: "ocaso", nombre: "Atardecer Ocaso", bg: "#4a1c34", acc: "#ffa366" },
+      { id: "galaxia", nombre: "Galaxia Universo", bg: "#1e1345", acc: "#a594f9" },
+      { id: "aurora", nombre: "Aurora Boreal", bg: "#0f363d", acc: "#64dfdf" },
+      { id: "algodon", nombre: "Algodón de Azúcar", bg: "#fff0f8", acc: "#8a9ad4" },
+      { id: "san-valentin", nombre: "San Valentín", bg: "#610c21", acc: "#ff8fa3" },
+      { id: "halloween", nombre: "Especial Halloween", bg: "#2b113d", acc: "#ff8800" }
+    ];
+
+    if (ACTIVAR_CATALOGO) {
+      const btnExplorer = document.getElementById('theme-explorer-btn');
+      const drawer = document.getElementById('theme-explorer-drawer');
+      const closeBtn = document.getElementById('explorer-close-btn');
+      const grid = document.getElementById('explorer-grid');
+
+      btnExplorer.style.display = 'flex';
+
+      function renderChips(activeId) {
+        grid.innerHTML = '';
+        LISTA_TEMAS.forEach(t => {
+          const chip = document.createElement('button');
+          chip.className = 'theme-chip' + (t.id === activeId ? ' active' : '');
+          chip.innerHTML = `
+            <span class="swatch-circle" style="background: linear-gradient(135deg, ${t.bg} 55%, ${t.acc} 45%);"></span>
+            <div class="chip-text">
+              <div class="chip-name">${t.nombre}</div>
+              <div class="chip-code">"${t.id}"</div>
+            </div>
+          `;
+          chip.addEventListener('click', () => {
+            // 1. Cambiar tema en el body
+            document.body.setAttribute('data-theme', t.id);
+            renderChips(t.id);
+
+            // 2. Cerrar selector
+            drawer.classList.remove('open');
+
+            // 3. Regresar al Overlay del Sobre con Sello de Lacre para ver el efecto desde cero
+            const ov = document.getElementById('unboxing-overlay');
+            const mc = document.getElementById('main-content');
+            const aud = document.getElementById('bg-audio');
+            const wf = document.getElementById('waveform');
+
+            ov.classList.remove('opening', 'hidden');
+            mc.classList.remove('revealed');
+            window.scrollTo({ top: 0, behavior: 'instant' });
+
+            // Pausar y rebobinar el audio para que suene de nuevo al romper el sello
+            if (aud) {
+              aud.pause();
+              aud.currentTime = 0;
+            }
+            if (wf) wf.classList.remove('playing');
+          });
+          grid.appendChild(chip);
+        });
+      }
+
+      renderChips(document.body.getAttribute('data-theme') || 'rubi');
+
+      btnExplorer.addEventListener('click', () => drawer.classList.add('open'));
+      closeBtn.addEventListener('click', () => drawer.classList.remove('open'));
+    }
+  </script>
+  
+</body>
+</html>
